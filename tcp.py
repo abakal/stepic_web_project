@@ -4,11 +4,9 @@ import socket
 class EchoHandler(asyncore.dispatcher_with_send):
 
     def handle_read(self):
-        while True:
-            data = self.recv(1024)
-            if not data:break
-            if "close" in data:self.close()
-            else:self.send(data)
+        data = self.recv(1024)
+        if data == "close":self.close()
+        self.send(data)
 
 class EchoServer(asyncore.dispatcher):
 
@@ -17,13 +15,13 @@ class EchoServer(asyncore.dispatcher):
         self.create_socket(socket.AF_INET, socket.SOCK_STREAM)
         self.set_reuse_addr()
         self.bind((host, port))
-        self.listen(10)
+        self.listen(11)
 
     def handle_accept(self):
         pair = self.accept()
         if pair is not None:
             sock, addr = pair
-            print ("Incoming connection from %s" % repr(addr))
+            print 'conn',addr
             handler = EchoHandler(sock)
 
 server = EchoServer('0.0.0.0', 2222)
