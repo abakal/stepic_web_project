@@ -5,8 +5,12 @@ class EchoHandler(asyncore.dispatcher_with_send):
 
     def handle_read(self):
         data = self.recv(1024)
-        if data == "close":self.close()
-        self.send(data)
+        if data:
+            if data=="close":
+                self.close()
+            else:
+                self.send(data)
+            
 
 class EchoServer(asyncore.dispatcher):
 
