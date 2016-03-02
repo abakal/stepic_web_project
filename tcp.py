@@ -4,7 +4,7 @@ class Server(asyncore.dispatcher):
     def __init__(self, host, port):
         asyncore.dispatcher.__init__(self)
         self.create_socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.bind(('', port))
+        self.bind((host, port))
         self.listen(10)
 
     def handle_accept(self):
