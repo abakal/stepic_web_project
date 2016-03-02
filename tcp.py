@@ -5,7 +5,7 @@ class Server(asyncore.dispatcher):
         asyncore.dispatcher.__init__(self)
         self.create_socket(socket.AF_INET, socket.SOCK_STREAM)
         self.bind(('', port))
-        self.listen(11)
+        self.listen(10)
 
     def handle_accept(self):
 
@@ -16,13 +16,9 @@ class Server(asyncore.dispatcher):
 class EchoHandler(asyncore.dispatcher_with_send):
 
     def handle_read(self):
-        self.data = self.recv(1024)
-        if not self.data:
-            self.close()
-        if self.data=="close":
-            self.close
-        else:
-            self.send(self.data)
+        data = self.recv(1024)
+        if data:
+            self.send(data)
 
 s = Server('0.0.0.0', 2222)
 asyncore.loop()
