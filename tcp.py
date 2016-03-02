@@ -18,7 +18,10 @@ class EchoHandler(asyncore.dispatcher_with_send):
     def handle_read(self):
         data = self.recv(1024)
         if data:
-            self.send(data)
+            if data="close":
+                self.close(data)
+            else:
+                self.send(data)
 
 s = Server('0.0.0.0', 2222)
 asyncore.loop()
