@@ -7,3 +7,6 @@
 127.0.0.1 - - [13/Mar/2016:16:37:50 +0300] "GET /favicon.ico HTTP/1.1" 404 142 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 Iceweasel/38.2.1"
 127.0.0.1 - - [13/Mar/2016:16:37:50 +0300] "GET /favicon.ico HTTP/1.1" 404 142 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 Iceweasel/38.2.1"
 127.0.0.1 - - [13/Mar/2016:16:37:55 +0300] "GET /ask HTTP/1.1" 404 142 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 Iceweasel/38.2.1"
+127.0.0.1 - - [22/Mar/2016:23:24:50 +0300] "GET / HTTP/1.1" 404 142 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 Iceweasel/38.2.1"
+127.0.0.1 - - [22/Mar/2016:23:24:50 +0300] "GET /favicon.ico HTTP/1.1" 404 142 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 Iceweasel/38.2.1"
+127.0.0.1 - - [22/Mar/2016:23:24:50 +0300] "GET /favicon.ico HTTP/1.1" 404 142 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 Iceweasel/38.2.1"

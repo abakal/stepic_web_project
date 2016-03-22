@@ -2,3 +2,5 @@
 2016/03/13 16:37:24 [error] 574#0: *5 open() "/home/box/web/public/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1"
 2016/03/13 16:37:50 [error] 574#0: *6 open() "/home/box/web/public/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "0.0.0.0"
 2016/03/13 16:37:50 [error] 574#0: *6 open() "/home/box/web/public/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "0.0.0.0"
+2016/03/22 23:24:50 [error] 574#0: *28 open() "/home/box/web/public/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1"
+2016/03/22 23:24:50 [error] 574#0: *28 open() "/home/box/web/public/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1"
