@@ -4,7 +4,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.views.decorators.http import require_GET,require_POST
 
-from .models.import Question,Answer
+from models import Question,Answer
 
 def test(request, *args, **kwargs):
 	return HttpResponse('OK')
