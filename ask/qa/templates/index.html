@@ -1,49 +1,3 @@
-#{% extends 'base.html' %}
-#{% load static %}
-#
-#{% block title %}
-#	Home Page
-#{% endblock %}
-#
-#
-#{% block content %}
-#{% if questions %}
-#<ul>
-#	{% for question in questions %}
-#		<li><a href="question/{{ question.id }}">{{ question.title }}</a></li>
-#	{% endfor %}
-#</ul>
-#    <nav><ul class="pagination">  
-#    {% for p in paginator.page_range %}  
-#        {% if p == page.number %} <li class="active">  
-#        {% else %} <li>  
-#        {% endif %}  
-#            <a href="{{ paginator.baseurl }}{{ p }}">  
-#                {{ p }}</a>  
-#        </li>  
-#    {% endfor %} 
-#    </ul></nav>
-#{% endblock %}
-#
-#div class="pagination">
-#	<span class="step-links">
-#	{% if questions.has_previous %}
-#		<a href="?page={{ questions.previous_page_number }}">previous</a>
-#		{% endif %}
-#
-#		<span class="current">
-#			Page {{ questions.number }} of {{ questions.paginator.num_pages }}
-#		</span>
-#
-#		{% if questions.has_next %}
-#		<a href="?page={{ questions.next_page_number }}">next</a>
-#		{% endif %}
-#	</span>
-#</div>
-#
-#
-#{% endif %}
-#{% endblock %}
 {% extends "base.html" %}
 {% block title %}
     {{ block.super }} – главная
@@ -51,7 +5,7 @@
 {% block content %}
     <h1>Последние вопросы</h1>
     {% for q in questions %}
-        <p><a href="question/{{question.id}}/">{{question.title}}</a></p>
+        <p><a href="question/{{q.id}}/">{{q.title}}</a></p>
     {% endfor %}
     <nav><ul class="pagination">  
     {% for p in paginator.page_range %}  
