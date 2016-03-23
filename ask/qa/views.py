@@ -11,23 +11,26 @@ def test(request, *args, **kwargs):
 
 # Create your views here.
 
-def home_page(request):
-	questions=Question.objects.order_by('-id')
-	paginator=Paginator(questions,10)
-	page=request.GET.get('page')
-	paginator.baseurl='/?page='
-	try:
-		queryset=paginator.page(page)
-	except PageNotAnInteger:
-		queryset=paginator.page(1)
-	except EmptyPage:
-		queryset=paginator.page(paginator.num_pages)
-	
-	context={
-	    'questions':    queryset,
-	    'paginator':paginator,'page':queryset,
-	}
-	return render(request,'index.html',context)
+
+def home page(request):
+    try:
+        page = int(request.GET.get('page', 1))
+    except ValueError:
+        raise Http404
+    limit = 10
+    questions = Question.objects.order_by('-id')
+    paginator = Paginator(questions, limit)
+    paginator.baseurl = '/?page='
+    try:
+        page = paginator.page(page)
+    except EmptyPage:
+        page = paginator.page(paginator.num_pages)
+    return render(request, 'index.html', {
+        'questions': page,
+        'paginator': paginator, 'page': page,
+    })
+
+
 
 def question_details(request, id):
 	question=get_object_or_404(Question, id=int(id))
