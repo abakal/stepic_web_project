@@ -12,7 +12,7 @@ def test(request, *args, **kwargs):
 # Create your views here.
 
 
-def home page(request):
+def home_page(request):
     try:
         page = int(request.GET.get('page', 1))
     except ValueError:
