@@ -1,32 +1,12 @@
-{% extends 'base.html' %}
-{% load static %}
-
+{% extends "base.html" %}
 {% block title %}
-	Question
+    {{ block.super }} – вопрос с ответами
 {% endblock %}
-
-
 {% block content %}
-{% if question %}
-	<h3>{{ question.title }}</h3>
-	<br>
-	<p>{{ question.text }}</p>
-{% endif %}
-
-<h2>Answers:</h2>	
-<hr></hr>
-{% for answer in answers %}
-	<p>{{ answer.text|linebreaksbr }}</p>
-{% endfor %}
-<hr></hr>
-
-
-<h2>Add a answer here:</h2>
-<form action="" method="post">
-	{% csrf_token %}
-	{{ form.errors }}
-	{{ form.as_p }}
-	<input type="submit" value="Submit" />
-</form>
-
+    <h2>{{question.title}}</h2>
+    <p>{{question.text}}</p>
+    <h2>Ответы экспертов</h2>
+    {% for answer in answers %}
+        <p>{{ answer }}</p>
+    {% endfor %}
 {% endblock %}
