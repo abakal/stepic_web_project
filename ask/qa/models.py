@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 from django.db import models
-from django.contrib.auth.models import user
+from django.contrib.auth.models import User
 from django.core.urlresolves import reverse
 # Create your models here.
 
