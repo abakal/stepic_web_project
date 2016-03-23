@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>Questions and answers</title>
+    <title>{% block title %}Q&A{% endblock %}</title>
+    {% block extrahead %}{% endblock %}
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/qa/bootstrap.min.css">
 </head>
 <body>
-	<h1>
-		{% block title %}
-		{% endblock %}
-	</h1>	
-	<div class="wrapper">
-		{% block content %}
-		{% endblock %}
-	</div>
+    <h1>Спроси у Пупкина!</h1>
+    {% block content %}{% endblock %}
 </body>
 </html>
