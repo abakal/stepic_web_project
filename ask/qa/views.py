@@ -15,6 +15,7 @@ def home_page(request):
 	questions=Question.objects.order_by('-id')
 	paginator=Paginator(questions,10)
 	page=request.GET.get('page')
+	paginator.baseurl='/?page='
 	try:
 		queryset=paginator.page(page)
 	except PageNotAnInteger:
@@ -24,6 +25,7 @@ def home_page(request):
 	
 	context={
 	    'questions':    queryset,
+	    'paginator':paginator,'page':queryset,
 	}
 	return render(request,'index.html',context)
 
