@@ -5,8 +5,8 @@ from django.core.urlresolvers import reverse
 # Create your models here.
 
 class Question(models.Model):
-    class Meta:
-        db_table='question'
+   # class Meta:
+     #   db_table='question'
     title=models.CharField(max_length=255)
     tex=models.TextField()
     added_at=models.DateTimeField(auto_now_add=True)
@@ -17,8 +17,8 @@ class Question(models.Model):
     	return self.title
 
 class Answer(models.Model):
-    class Meta:
-        db_table='answer'
+   # class Meta:
+     #   db_table='answer'
     text=models.TextField()
     added_at=models.DateTimeField(auto_now_add=True)
     question=models.ForeignKey(Question)
